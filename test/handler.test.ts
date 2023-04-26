@@ -3,7 +3,7 @@ import { handlePullRequest } from '../src/handler'
 
 describe('handlePullRequest', () => {
   let event: any
-  let context: Context
+  let context: Context<'pull_request.opened' | 'pull_request.ready_for_review'>
 
   beforeEach(async () => {
     event = {
@@ -29,7 +29,7 @@ describe('handlePullRequest', () => {
       draft: false,
     }
 
-    context = new Context(event, {} as any, {} as any)
+    context = new Context<'pull_request.opened' | 'pull_request.ready_for_review'>(event, {} as any, {} as any)
 
     context.config = jest.fn().mockImplementation(async () => {
       return {
