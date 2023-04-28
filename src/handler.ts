@@ -16,7 +16,9 @@ export interface Config {
   skipUsers: string[]
 }
 
-export async function handlePullRequest(context: Context): Promise<void> {
+export async function handlePullRequest(
+  context: Context<'pull_request.opened' | 'pull_request.ready_for_review'>
+): Promise<void> {
   const config = (await context.config('auto_assign.yml')) as Config
 
   if (!config) {
