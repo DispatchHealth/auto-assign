@@ -53,6 +53,7 @@
     "lint-staged": "10.5.4",
     "nodemon": "2.0.19",
     "prettier": "2.7.1",
+    "resolve": "^1.22.8",
     "smee-client": "1.2.3",
     "ts-jest": "27.1.5"
   },
